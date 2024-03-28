@@ -53,16 +53,13 @@ try:
                     data_write.close()
 
                     x = open ('result.txt', 'r')
-                    lines = x.readlines()
+                    result_read = x.read()
 
-                    print(lines)
-                    result_read = str(lines)
+                    result_read = result_read.rstrip('\n')
                     sock.send(result_read.encode())
                     
                     x.close()
-                    
-
-                    
+                                        
                     
                 else:
                     sock.close()
